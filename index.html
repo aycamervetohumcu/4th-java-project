@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fourth Java Project</title>
+    <title>Guess the Number Game</title>
 </head>
 <body>
-    <script src="index.js"></script>
+    <script>
+        function guessNumberGame() {
+            const randomNumber = Math.floor(Math.random() * 10) + 1;
+            let guess = null;
+            
+            while (guess !== randomNumber) {
+                guess = parseInt(prompt("Guess a number between 1 and 10: "), 10);
+                
+                if (isNaN(guess)) {
+                    console.log("Please enter a valid number.");
+                    continue;
+                }
+                
+                if (guess < randomNumber) {
+                    console.log("Too low!");
+                } else if (guess > randomNumber) {
+                    console.log("Too high!");
+                } else {
+                    console.log("Congratulations! You guessed the correct number!");
+                }
+            }
+        }
+
+        // Oyunu başlat
+        guessNumberGame();
+    </script>
 </body>
 </html>
