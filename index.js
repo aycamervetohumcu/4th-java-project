@@ -4,7 +4,6 @@ function guessNumberGame() {
     
     while (guess !== randomNumber) {
         guess = parseInt(prompt("Please, Guess a number between 1 and 10: "), 10);
-        
         if (isNaN(guess)) {
             console.log("Please enter a valid number.");
             continue;
